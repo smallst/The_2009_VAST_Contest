@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta name="generator" content="text/html" charset="utf-8"/>
+    <link rel="stylesheet" href="CSS/index.css" type="text/css" media="screen" />
+</head>
+<body>
+    <div class="back"></div>
+    
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <script type="text/javascript" src="d3/d3-tip.js"></script>
+    <script type="text/javascript" src="jQuery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="scripts/vis.js"></script>
+    <script type="text/javascript" src="scripts/drawslider.js"></script>
+    <script>
+     var back=d3.select(".back");
+     back.append("div")
+         .style("width",width*0.2+"px")
+         .html("employee");
+     back.append("div")
+         .style("width",width*0.2+"px")
+         .html("handler");
+     back.append("div")
+         .style("width",width*0.3+"px")
+         .html("middle man");
+     back.append("div")
+         .style("width",width*0.3+"px")
+         .html("leader");
+    </script>
+    <div class="side_panel">
+        <ul>
+            <li class="employee">
+                employee filter:
+                <input type="text" name="down" placeholder="39" onkeypress="if(event.keyCode==13) {connectfilterd['employee'] =this.value; drawslider(36,44,'employee');}" />
+                --
+                <input type="text" name="up" placeholder="41" onkeypress="if(event.keyCode==13) {connectfilteru['employee'] =this.value; drawslider(36,44,'employee');}" />
+                <div>
+                    <svg id="employee">
+                        <script>drawslider(36,44,"employee");
+                        </script>
+                    </svg>
+                </div>
+            </li>
+            <li class="handler">
+                handlers filter:
+                <input type="text" name="down" placeholder="30" onkeypress="if(event.keyCode==13) {connectfilterd['handler'] =this.value; drawslider(28,42,'handlers');}" />
+                --
+                <input type="text" name="up" placeholder="40" onkeypress="if(event.keyCode==13) {connectfilteru['handler'] =this.value; drawslider(28,42'handlers');}" />
+                <div>
+                    <svg id="handler">
+                        <script>drawslider(28,42,"handler");
+                        </script>
+                    </svg>
+                </div>
+            </li>
+            <li class="middle">
+                Middle man filter:
+                <input type="text" name="down" placeholder="1" onkeypress="if(event.keyCode==13) {connectfilterd['middle'] =this.value; drawslider(1,9,'middle');}" />
+                --
+                <input type="text" name="up" placeholder="5" onkeypress="if(event.keyCode==13) {connectfilteru['middle'] =this.value; drawslider(1,9,'middle');}" /> <div>
+                    <svg id="middle">
+                        <script>drawslider(1,9,"middle");
+                        </script>
+                    </svg>
+                </div>
+            </li>
+            <li class="leader">
+                Leader filter:
+                <input type="text" name="down" placeholder="100" onkeypress="if(event.keyCode==13) {connectfilterd['leader'] =this.value; drawslider(100,500,'leader');}" />
+                --
+                <input type="text" name="up" placeholder="500" onkeypress="if(event.keyCode==13) {connectfilteru['leader'] =this.value; drawslider(100,500,'leader');}" /> <div>
+                    <svg id="leader">
+                        <script>drawslider(100,500,"leader");
+                        </script>
+                    </svg>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="help_button">
+        help
+    </div>
+    <div class="help_doc">
+        <ul>
+            <li>单击点以高亮它的关系链</li>
+            <li>拖动点以固定它点位置</li>
+        </ul>
+
+    </div>
+    <script type="text/javascript" src="scripts/loaddata.js"></script>
+</body>

@@ -1,0 +1,133 @@
+svg{
+    border: solid 1px red
+}
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+    fill-opacity: 0.1;
+}
+.node .selected {
+    fill-opacity: 1;
+    stroke: black ;
+    stroke-width: 3px;
+}
+.link {
+    pointer-events:none;
+    stroke: #999;
+    stroke-opacity: 0.1;
+}
+.link .selected{
+    stroke: #ffbb11;
+    stroke-opacity: 1;
+}
+.brush .extent {
+    fill-opacity: .1;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+.d3-tip {
+    background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    line-height: 1;
+    padding: 12px;
+}
+.d3-tip::after {
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.8);
+    content: "▼";
+    display: inline;
+    font-size: 10px;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.d3-tip.n::after {
+    left: 0;
+    margin: -1px 0 0;
+    top: 100%;
+}
+.side_panel {
+    position: absolute;
+    right: 1em;
+}
+.side_panel input{
+    width:2em;
+    border-radius: 4px;
+    padding: 2px 0.5em 2px 0.5em;
+    border:2px solid white;
+    text-align: center;
+    background: #eeeeee;
+}
+.side_panel input:focus{
+    border: 2px solid #9eeee1;
+}
+.help_button {
+    width: 4em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1em;
+    border: 1px;
+    background: #9eeee1;
+}
+.help_button:hover{
+    background: #43aeff;
+}
+.help_doc{
+    position: absolute;
+    right: 5em;
+    bottom: 12em;
+    pointer-events:none;
+    opacity: 0;
+}
+.help_button:hover ~ .help_doc{
+    opacity: 1;
+}
+.back {
+    pointer-events: none;
+    position: absolute;
+}
+.back div{
+    float:left;
+    text-align: center;
+    border-bottom: 1px solid black ;
+    
+}
+.side_panel svg{
+    border: none;
+}
+
+.sliderAxis path, .sliderAxis line {
+    fill: none;
+    stroke: none;
+}
+.brushForSlider .extent {
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+.selecting circle {
+    fill-opacity: .2;
+}
+
+.side_panel circle{
+    -webkit-transition: fill-opacity 250ms linear;
+    -moz-transition: fill-opacity 250ms linear;
+    -o-transition: fill-opacity 250ms linear;
+}
+.selecting circle.selected {
+    stroke: rgb(137, 171, 227);
+}
+
+.resize path {
+    fill: #666;
+    fill-opacity: .8;
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
